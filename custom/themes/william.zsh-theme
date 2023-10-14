@@ -121,7 +121,7 @@ bureau_precmd () {
 setopt prompt_subst
 
 function nvm_prompt() {
-  [[ -f "$NVM_DIR/nvm.sh" ]] || return
+  [[ -n $NVM_BIN ]] && [[ -n $NVM_DIR ]] && [[ -f "$NVM_DIR/nvm.sh" ]] || return
   which nvm &>/dev/null || return
   local nvm_prompt=${$(nvm current)#v}
   echo "${ZSH_THEME_NVM_PROMPT_PREFIX}${nvm_prompt}${ZSH_THEME_NVM_PROMPT_SUFFIX}"
