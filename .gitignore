@@ -1,5 +1,7 @@
 # custom files
 custom/
+!custom/themes/william.zsh-theme
+
 
 # temp files directories
 cache/
